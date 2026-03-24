@@ -147,7 +147,9 @@ def SolveIVP_Method (duration,rodLength,dt,dx,thermalConductivity,heatPulseLengt
     elif len(x_h) %2 != 0 and num_seg%2==0:
         num_seg +=1
         x_h[int((heaterPosition/dx)+1)-(int((num_seg/2))+1):int((heaterPosition/dx)+1)+(int((num_seg/2)))]=1
-    
+    elif len(x_h) %2 != 0 and num_seg%2!=0:
+        x_h[int((heaterPosition/dx))-int(num_seg/2):int(heaterPosition/dx)+int(num_seg/2)+1]=1
+ #TRIALING THE ABOVE ELIF CHANGE   
 
     # volume of heater
     vol_h = np.pi*(num_seg)*dx*radius**2 
