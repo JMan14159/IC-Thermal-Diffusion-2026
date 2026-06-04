@@ -1,0 +1,243 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.15)  9 MAY 2026 19:11
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**"Final Report 2026.tex"
+(./Final Report 2026.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-11-06>
+(d:/texlive/2025/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(d:/texlive/2025/texmf-dist/tex/latex/base/fleqn.clo
+File: fleqn.clo 2016/12/29 v1.2b Standard LaTeX option (flush left equations)
+\mathindent=\skip49
+Applying: [2015/01/01] Make \[ robust on input line 50.
+LaTeX Info: Redefining \[ on input line 51.
+Already applied: [0000/00/00] Make \[ robust on input line 62.
+Applying: [2015/01/01] Make \] robust on input line 74.
+LaTeX Info: Redefining \] on input line 75.
+Already applied: [0000/00/00] Make \] robust on input line 83.
+)
+(d:/texlive/2025/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip50
+\belowcaptionskip=\skip51
+\bibindent=\dimen148
+)
+(d:/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(d:/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(d:/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(d:/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(d:/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(d:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(d:/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+)
+(d:/texlive/2025/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(d:/texlive/2025/texmf-dist/tex/latex/gensymb/gensymb.sty
+Package: gensymb 2022/10/17 v1.0.2 (KJH)
+)
+(d:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count283
+)
+(./Final Report 2026.aux)
+\openout1 = `"Final Report 2026.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+
+(d:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count284
+\scratchdimen=\dimen151
+\scratchbox=\box53
+\nofMPsegments=\count285
+\nofMParguments=\count286
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count287
+\MPscratchDim=\dimen152
+\MPnumerator=\count288
+\makeMPintoPDFobject=\count289
+\everyMPtoPDFconversion=\toks19
+) (d:/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(d:/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Info: Redefining \celsius on input line 8.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 8.
+
+
+Package gensymb Warning: Not defining \perthousand.
+
+LaTeX Info: Redefining \ohm on input line 8.
+Package gensymb Info: Using \Omega for \ohm on input line 8.
+
+Package gensymb Warning: Not defining \micro.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 11.
+<EditedCode.png, id=1, 600.74437pt x 153.57375pt>
+File: EditedCode.png Graphic file (type png)
+<use EditedCode.png>
+Package pdftex.def Info: EditedCode.png  used on input line 15.
+(pdftex.def)             Requested size: 360.0pt x 92.03247pt.
+<../../Thermal-Diffusion/Graphs/HighRes(dx less than or eq 0.015)/Copper_vs_Alu
+minum_10cm_bothsunk.png, id=3, 680.7834pt x 328.8285pt>
+File: ../../Thermal-Diffusion/Graphs/HighRes(dx less than or eq 0.015)/Copper_v
+s_Aluminum_10cm_bothsunk.png Graphic file (type png)
+<use ../../Thermal-Diffusion/Graphs/HighRes(dx less than or eq 0.015)/Copper_vs
+_Aluminum_10cm_bothsunk.png>
+Package pdftex.def Info: ../../Thermal-Diffusion/Graphs/HighRes(dx less than or
+ eq 0.015)/Copper_vs_Aluminum_10cm_bothsunk.png  used on input line 20.
+(pdftex.def)             Requested size: 360.0pt x 173.88188pt.
+<../../Thermal-Diffusion/Graphs/HighRes(dx less than or eq 0.015)/Stainless_Ste
+el_20cm_10cm_higherres_2000.png, id=4, 701.7417pt x 328.8285pt>
+File: ../../Thermal-Diffusion/Graphs/HighRes(dx less than or eq 0.015)/Stainles
+s_Steel_20cm_10cm_higherres_2000.png Graphic file (type png)
+<use ../../Thermal-Diffusion/Graphs/HighRes(dx less than or eq 0.015)/Stainless
+_Steel_20cm_10cm_higherres_2000.png>
+Package pdftex.def Info: ../../Thermal-Diffusion/Graphs/HighRes(dx less than or
+ eq 0.015)/Stainless_Steel_20cm_10cm_higherres_2000.png  used on input line 25.
+
+(pdftex.def)             Requested size: 360.0pt x 168.69379pt.
+[1
+
+{d:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/texlive/2025/
+texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2 <./EditedCode.png> <..
+/../Thermal-Diffusion/Graphs/HighRes(dx less than or eq 0.015)/Copper_vs_Alumin
+um_10cm_bothsunk.png> <../../Thermal-Diffusion/Graphs/HighRes(dx less than or e
+q 0.015)/Stainless_Steel_20cm_10cm_higherres_2000.png>] [3]
+<PXL_20260305_161435084.jpg, id=28, 4641.34pt x 3485.02pt>
+File: PXL_20260305_161435084.jpg Graphic file (type jpg)
+<use PXL_20260305_161435084.jpg>
+Package pdftex.def Info: PXL_20260305_161435084.jpg  used on input line 34.
+(pdftex.def)             Requested size: 360.0pt x 186.44048pt.
+<PXL_20260310_135734838.jpg, id=30, 4641.34pt x 3485.02pt>
+File: PXL_20260310_135734838.jpg Graphic file (type jpg)
+<use PXL_20260310_135734838.jpg>
+Package pdftex.def Info: PXL_20260310_135734838.jpg  used on input line 41.
+(pdftex.def)             Requested size: 360.0pt x 164.37245pt.
+<PXL_20260310_144003496.jpg, id=32, 3485.02pt x 4641.34pt>
+File: PXL_20260310_144003496.jpg Graphic file (type jpg)
+<use PXL_20260310_144003496.jpg>
+Package pdftex.def Info: PXL_20260310_144003496.jpg  used on input line 53.
+(pdftex.def)             Requested size: 161.9989pt x 103.31424pt.
+<PXL_20260331_154734230.jpg, id=34, 3485.02pt x 4641.34pt>
+File: PXL_20260331_154734230.jpg Graphic file (type jpg)
+<use PXL_20260331_154734230.jpg>
+Package pdftex.def Info: PXL_20260331_154734230.jpg  used on input line 64.
+(pdftex.def)             Requested size: 161.9989pt x 163.96315pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4 <./PXL_20260305_161435084.jpg>] [5 <./PXL_20260310_135734838.jpg> <./PXL_202
+60310_144003496.jpg> <./PXL_20260331_154734230.jpg>] [6]
+<../../Data-and-Papers/2026Data/Data Fitting/10sAlfit.png, id=50, 687.31781pt x
+ 452.4403pt>
+File: ../../Data-and-Papers/2026Data/Data Fitting/10sAlfit.png Graphic file (ty
+pe png)
+<use ../../Data-and-Papers/2026Data/Data Fitting/10sAlfit.png>
+Package pdftex.def Info: ../../Data-and-Papers/2026Data/Data Fitting/10sAlfit.p
+ng  used on input line 79.
+(pdftex.def)             Requested size: 360.0pt x 236.97552pt.
+<../../Data-and-Papers/2026Data/Data Fitting/10sAlnotfit.png, id=51, 680.5425pt
+ x 452.4403pt>
+File: ../../Data-and-Papers/2026Data/Data Fitting/10sAlnotfit.png Graphic file 
+(type png)
+<use ../../Data-and-Papers/2026Data/Data Fitting/10sAlnotfit.png>
+Package pdftex.def Info: ../../Data-and-Papers/2026Data/Data Fitting/10sAlnotfi
+t.png  used on input line 84.
+(pdftex.def)             Requested size: 360.0pt x 239.33658pt.
+ [7] [8 <../../Data-and-Papers/2026Data/Data Fitting/10sAlfit.png> <../../Data-
+and-Papers/2026Data/Data Fitting/10sAlnotfit.png>] [9] (./Final Report 2026.aux
+)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-11-06>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 1773 strings out of 467538
+ 29158 string characters out of 5423718
+ 443736 words of memory out of 5000000
+ 30688 multiletter control sequences out of 15000+600000
+ 640297 words of font info for 66 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,9n,65p,2016b,310s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<d:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/texl
+ive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/texlive/2025/t
+exmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb><d:/texlive/2025/texmf-dist/
+fonts/type1/public/cm-super/sfbx1200.pfb><d:/texlive/2025/texmf-dist/fonts/type
+1/public/cm-super/sfbx1440.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/c
+m-super/sfrm0600.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sf
+rm0800.pfb><d:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb
+><d:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><d:/texli
+ve/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><d:/texlive/2025/te
+xmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><d:/texlive/2025/texmf-dist/f
+onts/type1/public/cm-super/sftt1095.pfb>
+Output written on "Final Report 2026.pdf" (9 pages, 13597254 bytes).
+PDF statistics:
+ 118 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 70 words of extra memory for PDF output out of 10000 (max. 10000000)
+

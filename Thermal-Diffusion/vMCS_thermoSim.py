@@ -35,7 +35,7 @@ def calculateQ(rawData_,dt_,att_,lagtime):
     #Req = 6.82   # Yash Mohod 2023 1/8" diameter rod   
     #Req = 9.848   # 2026 1/4" diameter rod
     #Req = 14.488 # 2026 3/8" diameter rod
-    Req = 5.02  # 2026 aluminum rod
+    Req = 6.75  # 2026 aluminum rod 5.02
 
     for i in range(len(V)):
         Q += (V[i]**2 /Req ) *dt_
