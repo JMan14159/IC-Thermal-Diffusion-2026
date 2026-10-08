@@ -55,7 +55,7 @@ def anaMet(Q_,A_,kappa_,s_,t,d_,h_,a_,heatlossBool_,lag,dt_):
         temp2[int(lag/dt_):] = temp[:]
         return temp2
     else:
-        temp  =  Q_ / (2 * A_ * np.sqrt(np.pi * kappa_ * s_ * t_)) * np.e**(-(d_**2) * s_ / (4 * kappa_ * t_))
+        temp = Q_ / (2 * A_ * np.sqrt(np.pi * kappa_ * s_ * t_)) * np.e**(-(d_**2) * s_ / (4 * kappa_ * t_))
         temp2[int(lag/dt_):] = temp[:]
         return temp2 
 
