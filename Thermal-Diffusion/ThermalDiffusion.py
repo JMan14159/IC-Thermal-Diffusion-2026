@@ -123,7 +123,7 @@ def SolveIVP_Method (duration,rodLength,dt,dx,thermalConductivity,heatPulseLengt
     # Now the PDE constants:
     # Constants 
     beta = thermalConductivity/(volumetricHeatCapacity*dx**2) 
-    gamma = 1
+    gamma = 1/volumetricHeatCapacity
     delta = 2*convectiveHeatTransfer/(volumetricHeatCapacity*radius)
 
 

@@ -28,14 +28,14 @@ def tempConvert(rawData_,V_0_,att_, T_air_,T_0_,scal_,gain_,lagTime):
 
 
 # sum up the total q
-def calculateQ(rawData_,dt_,att_,lagtime):
+def calculateQ(rawData_,dt_,att_,lagtime,Req):
     lag =int(lagtime/0.01)
     V = rawData_[lag:round(100*att_+lag),7] - rawData_[lag:round(100*att_+lag),1]
     Q = 0
     #Req = 6.82   # Yash Mohod 2023 1/8" diameter rod   
     #Req = 9.848   # 2026 1/4" diameter rod
     #Req = 14.488 # 2026 3/8" diameter rod
-    Req = 6.75  # 2026 aluminum rod 5.02
+    #Req = 6.75  # 2026 aluminum rod 5.02
 
     for i in range(len(V)):
         Q += (V[i]**2 /Req ) *dt_
