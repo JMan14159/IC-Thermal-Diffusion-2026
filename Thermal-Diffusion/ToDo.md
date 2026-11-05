@@ -16,5 +16,6 @@ NEW STUFF
 3. Do the thingy with the curve for the thermistor for the timer
 4. Look at the Copper data, find a good one, take that Q, and figure out what we would need for V for aluminum to match
     - For this one we can use the C:\Users\joho1\Documents\Research with Matt\Data-and-Papers\PastData\100_10_400_ss_p375in_900gSinks_4V_340uTorr_January 16, 2026  1-43 PM.csv, as it is good data; has a Heat Pulse:  27.981410789788118 J
+5. With the calibrated thermistor curve figure out how to include that in the matlab collection file
 
 NOTE: when calculating Q, don't trust the V in the title, calculate the drop yourself from the data my 1 second pulse at 1V is actually 1.8V ???
