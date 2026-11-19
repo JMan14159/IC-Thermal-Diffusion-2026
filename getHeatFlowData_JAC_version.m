@@ -42,9 +42,25 @@ V_known_resistor_end = rawData(endIndex, 9);
 V_calib_thermistor_start = rawData(lagIndex, 10);
 V_calib_thermistor_end = rawData(endIndex, 10);
 
-% Calculate the actual temperature at start
-I_start = V_known_resistor_start / 993.4; % Current through known resistor (993.4 Ohms)
-R_calib_thermistor_start = V_calib_thermistor_start / I_start; % Resistance of calibrated thermistor at start
+% Calculate the calibrated thermistor's reistance at start
+R_calib_thermistor_start = V_calib_thermistor_start / (V_known_resistor_start - V_calib_thermistor_start) * 993.4; % Resistance of calibrated thermistor at start
+
+% Calculate the calibrated thermistor's resistance at end
+R_calib_thermistor_end = V_calib_thermistor_end / (V_known_resistor_end - V_calib_thermistor_end) * 993.4; % Resistance of calibrated thermistor at end
+
+% Calculating temperature
+a = 0.0033755692934735893;
+b = -2.799385186275534;
+c = 692.6654624819034;
+
+Temp_start_roots = roots([a, b, c - R_calib_thermistor_start]);
+Temp_end_roots = roots([a, b, c - R_calib_thermistor_end]);
+
+Temp_start = Temp_start_roots(real(Temp_start_roots) >= 290 & real(Temp_start_roots) <= 320);
+Temp_end = Temp_end_roots(real(Temp_end_roots) >= 290 & real(Temp_end_roots) <= 320);
+
+Temp_start = real(Temp_start);
+Temp_end = real(Temp_end);
 
 t = ((1:NSAI) / sample_rate)';
 
@@ -56,3 +72,9 @@ result(:, 5) = rawData(:, 4); % thermistor two
 result(:, 6) = rawData(:, 5); % thermistor three
 result(:, 7) = rawData(:, 6); % thermistor four
 result(:, 8) = rawData(:, 7); % V_0 from top of heater circuit
+
+y = plotHeatFlow(result,4);
+
+path = "E:/ThermalDiffusion/";
+file = strcat(path,num2str(lagTime),"_",num2str(pulsetime),"_",num2str(dataduration-lagTime),"_",ends,"_",Temp_start,"Ti","_",Temp_end,"Tf","_",note,"_",datestr(datetime('now'),'mmmm dd, yyyy HH-MM AM'),".csv");
+writematrix(result,file);
