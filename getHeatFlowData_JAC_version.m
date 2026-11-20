@@ -1,4 +1,4 @@
-function result=getHeatFlowData_JAC_version(pulsetime,lagTime,dataduration,ends,note);
+function result=getHeatFlowData_JAC_version(pulsetime,lagTime,dataduration,ends,note)
 
 % Set up the beginning constants
 dataduration = pulsetime + lagTime;
@@ -9,38 +9,37 @@ NSAI = floor(dataduration * sample_rate); % number of samples for analog input
 % Begin the dataAcquisition interface
 d = daq("ni");
 
-addinput(d, 'Dev3', 'ai1', 'Voltage') % voltage on bottom of heater
-addinput(d, 'Dev3', 'ai2', 'Voltage') % V_0 at top of voltage divider (thermistor circuit)
-addinput(d, 'Dev3', 'ai3', 'Voltage') % thermistor 1
-addinput(d, 'Dev3', 'ai4', 'Voltage') % thermistor 2
-addinput(d, 'Dev3', 'ai5', 'Voltage') % thermistor 3
-addinput(d, 'Dev3', 'ai6', 'Voltage') % thermistor 4
-addinput(d, 'Dev3', 'ai7', 'Voltage') % V_0 from top of heater circuit
-addinput(d, 'Dev3', 'ai8', 'Voltage') % Voltage across known resistor (for I)
-addinput(d, 'Dev3', 'ai9', 'Voltage') % Voltage across calibrated thermistor
+addinput(d, 'Dev3', 'ai0', 'Voltage') % voltage on bottom of heater
+addinput(d, 'Dev3', 'ai1', 'Voltage') % V_0 at top of voltage divider (thermistor circuit)
+addinput(d, 'Dev3', 'ai2', 'Voltage') % thermistor 1
+addinput(d, 'Dev3', 'ai3', 'Voltage') % thermistor 2
+addinput(d, 'Dev3', 'ai4', 'Voltage') % thermistor 3
+addinput(d, 'Dev3', 'ai5', 'Voltage') % thermistor 4
+addinput(d, 'Dev3', 'ai6', 'Voltage') % V_0 from top of heater circuit
+addinput(d, 'Dev3', 'ai7', 'Voltage') % Voltage across known resistor (for I)
+addinput(d, 'Dev3', 'ai8', 'Voltage') % Voltage across calibrated thermistor
 
 d.rate = sample_rate;
-d.DurationInSeconds = dataduration;
 
 if NSAO > 0
     addoutput(d, 'Dev3', 'ao0', 'Voltage')
     outputData = zeros(1, dataduration * sample_rate);
     outputData((lagTime * sample_rate):(lagTime * sample_rate) + NSAO) = 5;
-    queueOutputData(d, outputData');
+    write(d, outputData');
 end
 
 
-[rawData, timeData] = read(d);
+[rawData, timeData] = read(d, seconds(dataduration));
 
 % Record the voltages for finding resistance of calibrated thermistor at beginning and end of data collection
 lagIndex = find(timeData == lagTime);
 endIndex = find(timeData == (lagTime + pulsetime));
 
-V_known_resistor_start = rawData(lagIndex, 9);
-V_known_resistor_end = rawData(endIndex, 9);
+V_known_resistor_start = rawData(lagIndex, 8);
+V_known_resistor_end = rawData(endIndex, 8);
 
-V_calib_thermistor_start = rawData(lagIndex, 10);
-V_calib_thermistor_end = rawData(endIndex, 10);
+V_calib_thermistor_start = rawData(lagIndex, 9);
+V_calib_thermistor_end = rawData(endIndex, 9);
 
 % Calculate the calibrated thermistor's reistance at start
 R_calib_thermistor_start = V_calib_thermistor_start / (V_known_resistor_start - V_calib_thermistor_start) * 993.4; % Resistance of calibrated thermistor at start
