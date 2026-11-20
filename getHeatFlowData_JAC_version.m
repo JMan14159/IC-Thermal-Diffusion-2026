@@ -34,13 +34,12 @@ end
 
 
 % Record the voltages for finding resistance of calibrated thermistor at beginning and end of data collection
-lagIndex = find(timeData == lagTime);
-endIndex = find(timeData == (lagTime + pulsetime));
+endIndex = startIndex + NSAI - 1; % Calculate the end index for the data collection
 
-V_known_resistor_start = rawData(lagIndex, 8);
+V_known_resistor_start = rawData(startIndex, 8);
 V_known_resistor_end = rawData(endIndex, 8);
 
-V_calib_thermistor_start = rawData(lagIndex, 9);
+V_calib_thermistor_start = rawData(startIndex, 9);
 V_calib_thermistor_end = rawData(endIndex, 9);
 
 % Calculate the calibrated thermistor's reistance at start
