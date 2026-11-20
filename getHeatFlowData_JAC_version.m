@@ -19,17 +19,19 @@ addinput(d, 'Dev3', 'ai6', 'Voltage') % V_0 from top of heater circuit
 addinput(d, 'Dev3', 'ai7', 'Voltage') % Voltage across known resistor (for I)
 addinput(d, 'Dev3', 'ai8', 'Voltage') % Voltage across calibrated thermistor
 
-d.rate = sample_rate;
+d.Rate = sample_rate;
 
 if NSAO > 0
     addoutput(d, 'Dev3', 'ao0', 'Voltage')
-    outputData = zeros(1, dataduration * sample_rate);
-    outputData((lagTime * sample_rate):(lagTime * sample_rate) + NSAO) = 5;
-    write(d, outputData');
+    outputData = zeros(NSAI, 1); % Create the column vector for the output data, initialized to zero
+    startIndex = max(1, ceil(lagTime * sample_rate)); % Make sure the start index is at least 1
+    pulseEndIndex = startIndex + NSAO - 1; % Calculate the end index of the pulse
+    outputData(startIndex:pulseEndIndex) = 5;
+    [rawData, timeData] = readwrite(d, outputData);
+else
+    [rawData, timeData] = read(d, seconds(dataduration));
 end
 
-
-[rawData, timeData] = read(d,seconds(dataduration)); % reads the data d, for duration seconds
 
 % Record the voltages for finding resistance of calibrated thermistor at beginning and end of data collection
 lagIndex = find(timeData == lagTime);
