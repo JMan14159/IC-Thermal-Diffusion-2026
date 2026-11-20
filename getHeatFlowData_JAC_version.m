@@ -32,13 +32,18 @@ end
 
 
 % Record the voltages for finding resistance of calibrated thermistor at beginning and end of data collection
-endIndex = NSAI - 1; % Calculate the end index for the data collection
+endIndex = NSAI; % Calculate the end index for the data collection
 
-V_known_resistor_start = rawData(startIndex, 8);
-V_known_resistor_end = rawData(endIndex, 8);
+V_known_resistor_start = rawData{startIndex, 8};
+V_known_resistor_end = rawData{endIndex, 8};
 
-V_calib_thermistor_start = rawData(startIndex, 9);
-V_calib_thermistor_end = rawData(endIndex, 9);
+V_calib_thermistor_start = rawData{startIndex, 9};
+V_calib_thermistor_end = rawData{endIndex, 9};
+
+%%% Testing Displays
+disp(V_calib_thermistor_start)
+disp(V_calib_thermistor_end)
+%%%
 
 % Calculate the calibrated thermistor's reistance at start
 R_calib_thermistor_start = V_calib_thermistor_start / (V_known_resistor_start - V_calib_thermistor_start) * 993.4; % Resistance of calibrated thermistor at start
@@ -63,17 +68,24 @@ Temp_end = real(Temp_end);
 t = ((1:NSAI) / sample_rate)';
 
 result(:, 1) = t;  % times, in seconds
-result(:, 2) = rawData(:, 1); % heater voltage data
-result(:, 3) = rawData(:, 2); % thermometer input voltage
-result(:, 4) = rawData(:, 3); % thermistor one
-result(:, 5) = rawData(:, 4); % thermistor two
-result(:, 6) = rawData(:, 5); % thermistor three
-result(:, 7) = rawData(:, 6); % thermistor four
-result(:, 8) = rawData(:, 7); % V_0 from top of heater circuit
+result(:, 2) = rawData{:, 1}; % heater voltage data
+result(:, 3) = rawData{:, 2}; % thermometer input voltage
+result(:, 4) = rawData{:, 3}; % thermistor one
+result(:, 5) = rawData{:, 4}; % thermistor two
+result(:, 6) = rawData{:, 5}; % thermistor three
+result(:, 7) = rawData{:, 6}; % thermistor four
+result(:, 8) = rawData{:, 7}; % V_0 from top of heater circuit
 
 % Save the data
 path = "E:/ThermalDiffusion/";
-file = strcat(path,num2str(lagTime),"_",num2str(pulsetime),"_",num2str(dataduration-lagTime),"_",ends,"_",Temp_start,"Ti","_",Temp_end,"Tf","_",note,"_",datestr(datetime('now'),'mmmm dd, yyyy HH-MM AM'),".csv");
+file = strcat(path,num2str(lagTime),"_",num2str(pulsetime),"_",num2str(dataduration-lagTime),"_",ends,"_",num2str(Temp_start),"Ti","_",num2str(Temp_end),"Tf","_",note,"_",datestr(datetime('now'),'mmmm dd, yyyy HH-MM AM'),".csv");
 writematrix(result,file);
 
-plot(result(:,1), result(:,2));
+disp(V_known_resistor_start)
+disp(V_known_resistor_end)
+disp(R_calib_thermistor_start)
+disp(R_calib_thermistor_end)
+disp(Temp_start)
+disp(Temp_end)
+disp(startIndex)
+disp(endIndex)
