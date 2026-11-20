@@ -1,7 +1,7 @@
 function result=getHeatFlowData_JAC_version(pulsetime,lagTime,dataduration,ends,note)
 
 % Set up the beginning constants
-dataduration = pulsetime + lagTime;
+dataduration = dataduration + lagTime;
 sample_rate = 100; % 100 Hz
 NSAO = floor(pulsetime * sample_rate); % number of samples for analog output pulse
 NSAI = floor(dataduration * sample_rate); % number of samples for analog input
@@ -29,7 +29,7 @@ if NSAO > 0
 end
 
 
-[rawData, timeData] = read(d, seconds(dataduration));
+[rawData, timeData] = read(d,seconds(dataduration)); % reads the data d, for duration seconds
 
 % Record the voltages for finding resistance of calibrated thermistor at beginning and end of data collection
 lagIndex = find(timeData == lagTime);
@@ -48,7 +48,7 @@ R_calib_thermistor_start = V_calib_thermistor_start / (V_known_resistor_start - 
 R_calib_thermistor_end = V_calib_thermistor_end / (V_known_resistor_end - V_calib_thermistor_end) * 993.4; % Resistance of calibrated thermistor at end
 
 % Calculating temperature
-a = 0.0033755692934735893;
+a = 0.0033755692934735906;
 b = -2.799385186275534;
 c = 692.6654624819034;
 
@@ -72,8 +72,9 @@ result(:, 6) = rawData(:, 5); % thermistor three
 result(:, 7) = rawData(:, 6); % thermistor four
 result(:, 8) = rawData(:, 7); % V_0 from top of heater circuit
 
-y = plotHeatFlow(result,4);
-
+% Save the data
 path = "E:/ThermalDiffusion/";
 file = strcat(path,num2str(lagTime),"_",num2str(pulsetime),"_",num2str(dataduration-lagTime),"_",ends,"_",Temp_start,"Ti","_",Temp_end,"Tf","_",note,"_",datestr(datetime('now'),'mmmm dd, yyyy HH-MM AM'),".csv");
 writematrix(result,file);
+
+plot(result(:,1), result(:,2));
