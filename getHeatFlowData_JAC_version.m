@@ -4,7 +4,7 @@ function result=getHeatFlowData_JAC_version(pulsetime,lagTime,dataduration,ends,
 dataduration = dataduration + lagTime;
 sample_rate = 100; % 100 Hz
 NSAO = floor(pulsetime * sample_rate); % number of samples for analog output pulse
-NSAI = floor(dataduration * sample_rate); % number of samples for analog input
+NSAI = floor(dataduration * sample_rate); % number of samples for analog input (samples during the WHOLE TIME it is running)
 
 % Begin the dataAcquisition interface
 d = daq("ni");
@@ -25,16 +25,14 @@ if NSAO > 0
     addoutput(d, 'Dev3', 'ao0', 'Voltage')
     outputData = zeros(NSAI, 1); % Create the column vector for the output data, initialized to zero
     startIndex = max(1, ceil(lagTime * sample_rate)); % Make sure the start index is at least 1
-    pulseEndIndex = startIndex + NSAO - 1; % Calculate the end index of the pulse
+    pulseEndIndex = startIndex + NSAO; % Calculate the end index of the pulse
     outputData(startIndex:pulseEndIndex) = 5;
-    [rawData, timeData] = readwrite(d, outputData);
-else
-    [rawData, timeData] = read(d, seconds(dataduration));
+    [rawData, ~] = readwrite(d, outputData);
 end
 
 
 % Record the voltages for finding resistance of calibrated thermistor at beginning and end of data collection
-endIndex = startIndex + NSAI - 1; % Calculate the end index for the data collection
+endIndex = NSAI - 1; % Calculate the end index for the data collection
 
 V_known_resistor_start = rawData(startIndex, 8);
 V_known_resistor_end = rawData(endIndex, 8);
